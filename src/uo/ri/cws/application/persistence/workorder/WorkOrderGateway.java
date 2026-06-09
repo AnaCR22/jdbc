@@ -1,6 +1,5 @@
 package uo.ri.cws.application.persistence.workorder;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -80,18 +79,6 @@ public interface WorkOrderGateway extends Gateway<WorkOrderRecord > {
      */
     List<WorkOrderRecord> findByMechanicId(String idMechanic) throws PersistenceException;
 
-    /**
-     * Checks whether the mechanic has any work orders recorded
-     * within the specified date range.
-     *
-     * @param mechanicId the identifier of the mechanic
-     * @param startDate the start date (inclusive)
-     * @param endDate the end date (inclusive)
-     * @return true if the mechanic has work orders in that period; false otherwise
-     * @throws PersistenceException if a database access error occurs
-     */
-    boolean existsWorkOrdersByMechanicId(String mechanicId, LocalDate startDate,
-                                         LocalDate endDate) throws PersistenceException;
     
     public static class WorkOrderRecord {
         public String id;

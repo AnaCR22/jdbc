@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -224,13 +223,6 @@ public class WorkOrderGatewayImpl implements WorkOrderGateway {
 	}
 
 	return result;
-    }
-
-    @Override
-    public boolean existsWorkOrdersByMechanicId(String mechanicId,
-	LocalDate startDate, LocalDate endDate) {
-	// TODO Auto-generated method stub
-	return false;
     }
 
 }
