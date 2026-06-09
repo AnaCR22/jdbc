@@ -12,6 +12,7 @@ import uo.ri.cws.application.service.mechanic.MechanicCrudService;
 import uo.ri.cws.application.service.mechanic.crud.MechanicCrudServiceImpl;
 import uo.ri.cws.application.service.payroll.PayrollService;
 import uo.ri.cws.application.service.professionalgroup.ProfessionalGroupCrudService;
+import uo.ri.cws.application.service.professionalgroup.crud.ProfessionalGroupCrudServiceImpl;
 import uo.ri.cws.application.service.spare.SparePartCrudService;
 import uo.ri.cws.application.service.vehicle.VehicleCrudService;
 import uo.ri.cws.application.service.vehicletype.VehicleTypeCrudService;
@@ -53,9 +54,9 @@ public class ServiceFactory {
     }
 
     public ProfessionalGroupCrudService forProfessionalGroupCrudService() {
-        throw new NotYetImplementedException();
+	return new ProfessionalGroupCrudServiceImpl();
     }
-
+    
     public ClientCrudService forClientCrudService() {
         throw new NotYetImplementedException();
     }

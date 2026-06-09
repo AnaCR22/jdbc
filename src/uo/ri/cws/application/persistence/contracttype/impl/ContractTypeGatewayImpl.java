@@ -100,7 +100,6 @@ public class ContractTypeGatewayImpl implements ContractTypeGateway {
     @Override
     public List<ContractTypeRecord> findAll() throws PersistenceException {
 	List<ContractTypeRecord> contractTypes = new ArrayList<>();
-	;
 
 	try {
 	    Connection c = Jdbc.getCurrentConnection();

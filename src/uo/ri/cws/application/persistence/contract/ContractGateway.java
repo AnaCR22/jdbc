@@ -50,6 +50,16 @@ public interface ContractGateway extends Gateway<ContractRecord> {
      */
     public boolean existsByContractTypeId(String id);
 
+    /**
+     * Checks whether there is any contract linked to a given professional group.
+     *
+     * @param id the id of the professional group
+     * @return true if there is at least one contract using this  professional group,
+     *         false otherwise
+     * @throws PersistenceException if any database access error occurs
+     */
+    public boolean existsByProfessionalGroupId(String id);
+
 
     public static class ContractRecord {
 	public String id;

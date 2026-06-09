@@ -32,6 +32,9 @@ public class UpdateContractType implements Command<Void> {
         BusinessChecks.exists(oct, "The contract type does not exist");
         
         ContractTypeRecord record = oct.get();
+        BusinessChecks.isTrue(record.version == dto.version,
+            "The contract type has been updated by another user");
+        
         record.compensationDaysPerYear = dto.compensationDays;
         
         ctg.update(record);

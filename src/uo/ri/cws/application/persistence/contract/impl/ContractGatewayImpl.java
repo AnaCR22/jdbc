@@ -230,6 +230,24 @@ public class ContractGatewayImpl implements ContractGateway {
         }
     }
 
+    @Override
+    public boolean existsByProfessionalGroupId(String professionalGroupId) {
+	try {
+            Connection c = Jdbc.getCurrentConnection();
+            String sql = Queries.getSQLSentence("TCONTRACTS_COUNT_BY_PROFESSIONALGROUP");
+
+            try (PreparedStatement pst = c.prepareStatement(sql)) {
+                pst.setString(1, professionalGroupId);
+                try (ResultSet rs = pst.executeQuery()) {
+                    rs.next();
+                    return rs.getInt(1) > 0;
+                }
+            }
+        } catch (SQLException e) {
+            throw new PersistenceException("Error checking contracts by professional group", e);
+        }
+    }
+
 
 
 }
