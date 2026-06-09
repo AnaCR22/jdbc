@@ -1,0 +1,8 @@
+Nombre: Ana Calleja Ramón
+NIF: 71827530W
+UO: UO300568
+
+Casos de uso implementados:
+– Contract management
+– Contract type management
+
